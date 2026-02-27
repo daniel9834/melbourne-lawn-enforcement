@@ -1178,17 +1178,27 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--orange);
+  display: flex;
   z-index: 80;
-  text-align: center;
 }
 .mobile-cta-bar a {
-  display: block;
-  padding: var(--space-md) var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex: 1;
+  padding: var(--space-md) var(--space-sm);
   color: var(--white);
   font-weight: 700;
   font-size: var(--text-sm);
   letter-spacing: 0.04em;
+  text-align: center;
+}
+.mobile-cta-bar__call {
+  background: var(--green);
+}
+.mobile-cta-bar__quote {
+  background: var(--orange);
 }
 @media (min-width: 768px) {
   .mobile-cta-bar { display: none; }
