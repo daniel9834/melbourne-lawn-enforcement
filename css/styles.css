@@ -304,7 +304,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   align-items: center;
   gap: var(--space-sm);
   text-decoration: none;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
 }
 .logo__img {
   width: 64px;
@@ -1183,10 +1184,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   left: 0;
   right: 0;
   display: flex;
-  gap: 1px;
+  gap: var(--space-sm);
   z-index: 80;
-  padding: 0 0 env(safe-area-inset-bottom, 0);
-  background: var(--green-dark);
+  padding: var(--space-sm) var(--space-md);
+  padding-bottom: calc(var(--space-sm) + env(safe-area-inset-bottom, 0px));
+  background: var(--white);
+  border-top: 1px solid var(--rule);
 }
 .mobile-cta-bar__quote,
 .mobile-cta-bar__call {
@@ -1194,31 +1197,34 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   align-items: center;
   justify-content: center;
   gap: 0.4em;
-  padding: var(--space-md) var(--space-lg);
+  padding: 0.875rem var(--space-lg);
   color: var(--white);
   font-weight: 700;
   font-size: var(--text-sm);
   letter-spacing: 0.04em;
   text-decoration: none;
+  border-radius: 999px;
 }
-.mobile-cta-bar__quote {
-  flex: 1;
-  background: var(--orange);
-}
-.mobile-cta-bar__quote:hover { background: var(--orange-light); }
 .mobile-cta-bar__call {
-  flex: 0 0 auto;
+  flex: 1;
   background: var(--green-dark);
 }
 .mobile-cta-bar__call:hover { background: var(--green); }
 .mobile-cta-bar__call svg {
   flex-shrink: 0;
 }
+.mobile-cta-bar__quote {
+  flex: 1;
+  background: var(--white);
+  color: var(--green-dark);
+  border: 2px solid var(--green-dark);
+}
+.mobile-cta-bar__quote:hover { background: var(--green-tint); }
 @media (min-width: 768px) {
   .mobile-cta-bar { display: none; }
 }
 @media (max-width: 767px) {
-  body { padding-bottom: 56px; }
+  body { padding-bottom: 68px; }
 }
 
 /* ── Focus visible ── */
