@@ -83,6 +83,7 @@ body {
   color: var(--ink);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -304,8 +305,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   align-items: center;
   gap: var(--space-sm);
   text-decoration: none;
-  flex-shrink: 1;
-  min-width: 0;
+  flex-shrink: 0;
 }
 .logo__img {
   width: 64px;
@@ -1218,6 +1218,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   background: var(--white);
   color: var(--green-dark);
   border: 2px solid var(--green-dark);
+  white-space: nowrap;
 }
 .mobile-cta-bar__quote:hover { background: var(--green-tint); }
 @media (min-width: 768px) {
