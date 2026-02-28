@@ -761,6 +761,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   text-transform: uppercase;
   color: var(--ink-light);
 }
+@media (max-width: 600px) {
+  .stats-grid { gap: var(--space-md); }
+  .stat__number { font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl)); }
+}
 
 /* ── SERVICES SECTION ── */
 .services-intro {
@@ -1178,20 +1182,43 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--orange);
+  display: flex;
+  gap: 1px;
   z-index: 80;
-  text-align: center;
+  padding: 0 0 env(safe-area-inset-bottom, 0);
+  background: var(--green-dark);
 }
-.mobile-cta-bar a {
-  display: block;
-  padding: var(--space-md) var(--space-xl);
+.mobile-cta-bar__quote,
+.mobile-cta-bar__call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  padding: var(--space-md) var(--space-lg);
   color: var(--white);
   font-weight: 700;
   font-size: var(--text-sm);
   letter-spacing: 0.04em;
+  text-decoration: none;
+}
+.mobile-cta-bar__quote {
+  flex: 1;
+  background: var(--orange);
+}
+.mobile-cta-bar__quote:hover { background: var(--orange-light); }
+.mobile-cta-bar__call {
+  flex: 0 0 auto;
+  background: var(--green-dark);
+}
+.mobile-cta-bar__call:hover { background: var(--green); }
+.mobile-cta-bar__call svg {
+  flex-shrink: 0;
 }
 @media (min-width: 768px) {
   .mobile-cta-bar { display: none; }
+}
+@media (max-width: 767px) {
+  body { padding-bottom: 56px; }
 }
 
 /* ── Focus visible ── */
