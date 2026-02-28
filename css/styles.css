@@ -83,7 +83,6 @@ body {
   color: var(--ink);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -305,11 +304,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   align-items: center;
   gap: var(--space-sm);
   text-decoration: none;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
 }
 .logo__img {
   width: 64px;
   height: auto;
+  flex-shrink: 0;
 }
 .logo__text {
   font-family: var(--font-display);
@@ -318,6 +319,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   color: var(--green);
   line-height: 1.2;
   text-transform: uppercase;
+}
+@media (max-width: 480px) {
+  .logo__img { width: 44px; }
+  .logo__text { font-size: var(--text-sm); }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .logo__img { width: 52px; }
+  .logo__text { font-size: var(--text-base); }
 }
 
 /* Desktop nav */
